@@ -1,0 +1,275 @@
+<form [formGroup]="staffRegister" (ngSubmit)="staffHandler()">
+  <div class="col">
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="BasicForm" >
+      <div formGroupName="basic" class="row">
+        <ng-template matStepLabel>Personal Details</ng-template>
+        
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First name" formControlName="firstName" required>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Middle Name</mat-label>
+            <input matInput placeholder="Middle name" formControlName="middleName" required>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last name" formControlName="lastName" required>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>email</mat-label>
+            <input matInput placeholder="Last name" formControlName="email" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Mobile</mat-label>
+            <input type="tel" matInput placeholder="Last name" formControlName="mobile" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>check number</mat-label>
+            <input matInput placeholder="111028301" formControlName="checknumber" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>pf number</mat-label>
+            <input matInput placeholder="PF.12345" formControlName="pfnumber" required>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Force Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="fnumber" required>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="nida" required>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Enter your gender</mat-label>
+            <mat-select [(ngModel)]="selectedValue" formControlName="gender" name="gender">
+              <!-- <mat-option></mat-option> -->
+                 @for(option of gender; track option) {
+                  <mat-option [value]="option.value" >{{option.viewValue}}
+                  </mat-option>
+              }
+            </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Enter your Region</mat-label>
+            <mat-select [(ngModel)]="selectedValue" formControlName="gender" name="gender">
+              <!-- <mat-option></mat-option> -->
+                 @for(option of gender; track option) {
+                  <mat-option [value]="option.value" >{{option.viewValue}}
+                  </mat-option>
+              }
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Enter your District</mat-label>
+            <mat-select [(ngModel)]="selectedValue" formControlName="gender" name="gender">
+              <!-- <mat-option></mat-option> -->
+                 @for(option of gender; track option) {
+                  <mat-option [value]="option.value" >{{option.viewValue}}
+                  </mat-option>
+              }
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Enter your Job</mat-label>
+            <mat-select [(ngModel)]="selectedValue" formControlName="gender" name="gender">
+              <!-- <mat-option></mat-option> -->
+                 @for(option of gender; track option) {
+                  <mat-option [value]="option.value" >{{option.viewValue}}
+                  </mat-option>
+              }
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Enter your Section</mat-label>
+            <mat-select [(ngModel)]="selectedValue" formControlName="gender" name="gender">
+              <!-- <mat-option></mat-option> -->
+                 @for(option of gender; track option) {
+                  <mat-option [value]="option.value" >{{option.viewValue}}
+                  </mat-option>
+              }
+            </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <div>
+          <button mat-raised-button color="primary" mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step  [stepControl]="RecognitionForm" label="Recogntion Details">
+      <div formGroupName="recognition" class="row">
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="body" required>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button  mat-raised-button color="primary" mat-button matStepperPrevious>Back</button>|
+          <button mat-raised-button color="primary"  mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="OthersForm" label="Other Details">
+      <div formGroupName="other" class="row">
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="age" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="age" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="age" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="age" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="age" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="age" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="age" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+            <mat-label>Nida Number</mat-label>
+            <input matInput placeholder="h.2362" formControlName="age" required>
+          </mat-form-field>
+        </div>
+        
+        <div>
+          <button mat-raised-button color="primary" mat-button matStepperPrevious>Back</button>|
+          <button mat-raised-button color="accent" mat-button matStepperNext>save</button>
+        </div>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
+</form>
+  

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+</head>
+<body>
+
+    <div class="container">
+        
+        <form [formGroup]="loginForm" (ngSubmit)="onClick()">
+          <h1>login form</h1>
+          <ng-container *ngIf="errosMsg">
+            <p class="text-danger">{{errosMsg}}</p>
+    
+        </ng-container>
+        <div class="formGroup">
+            <label for="">username</label>
+            <input type="text" class="form-control" required formControlName="email">
+        </div>
+
+        <div class="formGroup">
+            <label for="">password</label>
+            <input type="password" class="form-control" required formControlName="password" >
+        </div>
+
+        <button mat-raised-button color="primary" [disabled]="loginForm.invalid"><mat-icon>login</mat-icon> Login</button>
+
+        <!-- <button mat-raised-button color="primary" (click)="onLogin()"><mat-icon>login</mat-icon> Login</button> -->
+
+    </form>
+    </div>
+</body>
+</html>
